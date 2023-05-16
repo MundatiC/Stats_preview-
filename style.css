@@ -1,143 +1,119 @@
+:root {
+    --primary-clr: hsl(233, 47%, 7%);
+    --secondary-clr: hsl(244, 38%, 16%);
+    --accent-clr: hsl(277, 64%, 61%);
+    --main-heading-stats-clr: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-heading: hsla(0, 0%, 100%, 0.6);
+}
+
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-
-body,
-p,
-h1,
-h2,
-ul,
-li {
-    margin: 0;
-    padding: 0;
+html {
+    font-size: 100%;
 }
-
 body {
+    color: var(--main-heading-stats-clr);
+    background-color: var(--primary-clr);
     display: grid;
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
+    place-items: center;
+    height: 100vh;
+}
+.stats-preview-card {
+    width: 90%;
+    max-width: 70rem;
+    height: 29rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--secondary-clr);
+    border-radius: 7px;
+    overflow: hidden;
+}
+.stats-preview {
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    background-color: #090b1a;
-}
-
-picture img {
-    mix-blend-mode: multiply;
-    opacity: .8;
-    display: block;
-    max-width: 100%;
-}
-
-picture {
     display: grid;
-    justify-content: center;
-    background-color: hsl(274, 64%, 55%);
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem;
+    grid-template-rows: repeat(3, min-content);
+    row-gap: 2em;
+    padding: 4em;
 }
-
-.container {
-    max-width: 40.875rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    text-align: center;
+.stats__title {
+    font-size: 2.3rem;
 }
-
-article {
-    background-color: #1b1938;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+.title--accent {
+    color: var(--accent-clr);
 }
-
-h1 {
-    font-size: 1.75rem;
-    line-height: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+.stats__description {
+    font-size: 15px;
+    color: var(--main-paragraph);
+    padding-right: 2.7em;
+    line-height: 1.8;
 }
-
-h1 span {
-    color: #aa5cdb;
-}
-
-hgroup p {
-    font-size: 0.938rem;
-    line-height: 1.563rem;
-    color: hsla(0, 0%, 100%, 0.6);
-    margin-bottom: 2rem;
-}
-
-hgroup {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-ul span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-ul {
-    font-size: 0.75rem;
-    font-family: 'Lexend Deca', sans-serif;
-    color: hsla(0, 0%, 100%, 0.6);
-}
-
-li {
-    margin-bottom: 1.5rem;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     text-transform: uppercase;
-    list-style-type: none;
+    font-weight: 400;
+    margin-top: 1em;
 }
-
-/* -----------------------------------media start------------------------- */
-/* any size smaller then 905px and the picture shrinks but the article stops so I get the  */
-/* purple background bleeding though the bottom */
-
-@media screen and (min-width: 57.188rem) {
-    .container {
-        max-width: 72.5rem;
+.stat__numbers {
+    font-size: 1.5rem;
+}
+.stat__type {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--stat-heading);
+    margin-top: 0.4em;
+}
+.stats-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            hsla(277, 59%, 30%, 0.6),
+            hsla(277, 59%, 30%, 0.6)
+        ),
+        url('./images/image-header-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 55.56rem) {
+    html {
+        font-size: 85%;
     }
-
-    main {
-        display: flex;
-        flex-flow: row-reverse;
-        place-content: center;
+    .stats-preview-card {
+        height: 80vh;
+        grid-template-columns: none;
+        grid-template-rows: auto min-content;
+        justify-content: center;
+        text-align: center;
     }
-
-    article {
-        display: flex;
-        flex-flow: column;
-        flex-basis: 35.625rem;
-        margin: 0;
-        border-bottom-left-radius: .5rem;
-        border-top-left-radius: .5rem;
-        margin-left: 1.25rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
+    .stats-preview {
+        padding: 2em;
+        gap: 1em;
     }
-
-    picture {
-        margin-left: 0;
-        margin-right: 1.25rem;
-        border-bottom-right-radius: .5rem;
-        border-top-right-radius: .5rem;
-        border-top-left-radius: 0;
+    .stats__title {
+        font-size: 2rem;
     }
-
-    ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+    .stats__description {
+        padding-inline: 0.8em;
     }
-
-    li {
-        margin: 0;
+    .stats-img {
+        background: linear-gradient(
+                hsla(277, 59%, 30%, 0.6),
+                hsla(277, 59%, 30%, 0.6)
+            ),
+            url('./images/image-header-mobile.jpg');
+        background-size: cover;
+        grid-row: 1;
+    }
+    .stats {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        row-gap: 2em;
+        margin-top: 2em;
     }
 }
