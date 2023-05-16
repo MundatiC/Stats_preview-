@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
- <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Stats preview card component</title>
 </head>
+
 <body>
-  <div class="container">
-    <div class="left"> 
-        <p class="bold-text">Get insights that help your business grow</p>
-        <p class="smaller-text">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
-        <p class="stats"> <p class="ten"> 10k+</p> <p class="three">314 </p> <p class="million">12m+</p> </p>
-        <p class = "words">
-            <p class="companies">companies</p>
-            <p class="templates">templates</p>
-            <p class="queries">queries</p>
-
-
-        </p>
-        
+    <div class="container">
+        <main>
+            <picture>
+                <source srcset="./images/image-header-desktop.jpg" media="(min-width: 57.188rem)">
+                <img src="./images/image-header-mobile.jpg" alt="people in office smiling">
+            </picture>
+            <article>
+                <hgroup>
+                    <h1>Get <span>insights</span> that help your business grow.</h1>
+                    <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer
+                        experience, and overall efficiency.</p>
+                </hgroup>
+                <ul>
+                    <li>
+                        <p><span>10k+</span><br>companies</p>
+                    </li>
+                    <li>
+                        <p><span>314</span><br>templates</p>
+                    </li>
+                    <li>
+                        <p><span>12M+</span><br>queries</p>
+                    </li>
+            </article>
+        </main>
     </div>
-   
-    <div class="right">
-        <img src="images/image-header-desktop.jpg" alt="">
-    </div>
-  </div>
 </body>
+
 </html>
